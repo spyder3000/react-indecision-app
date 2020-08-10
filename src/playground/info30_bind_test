@@ -1,0 +1,14 @@
+/* Bind testing 
+const obj = {
+    name: 'Vikram', 
+    getName() {
+        return this.name; 
+    }
+};  
+
+//console.log(obj.getName());   // works as a class method
+//const getName = obj.getName;      // fails as when copied, getName is created as a regular function where 'this' is undefined 
+const getName = obj.getName.bind(obj);    // bind uses 1st arg to show what context this is -- e.g. this refers to obj 
+console.log(getName());   */
+
+

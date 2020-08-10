@@ -1,0 +1,38 @@
+.ReactModalPortal > div {   // direct descendants of this class;  class defined by React-Modal 
+    opacity: 0;   
+}
+
+.ReactModalPortal .ReactModal__Overlay   {    // the property we want to transition
+    align-items: center;        // another flex-box property
+    display: flex; 
+    justify-content: center;   // take all content & center
+    transition: opacity 200ms ease-in-out;    // things accelerate & decelerate
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open   {    // Element selector __ & modifier -- [found in React-Modal html]
+    opacity: 1;  
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close   {    // Element selector __ & modifier -- [found in React-Modal html]
+    opacity: 0;  
+}
+
+.modal {        // .modal defined in OptionModal.js w/in <Modal> tag
+    background: $light-blue;
+    color: white; 
+    max-width: 30rem;   
+    outline: none;
+    padding: $l-size;
+    text-align: center;
+}
+
+.modal__title {
+    margin: 0 0 $m-size 0; 
+}
+
+.modal__body {
+    font-size: 2rem;
+    font-weight: 300; 
+    margin: 0 0 $l-size 0; 
+    word-break: break-all;   // will break really long words into multiple lines 
+}
