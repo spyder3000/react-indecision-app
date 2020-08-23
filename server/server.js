@@ -5,7 +5,7 @@ const path = require('path');
 const express = require('express'); 
 const app = express();      // app is an express application
 const publicPath = path.join(__dirname, '..', 'public');  // pieces together all elements of path;  '..' to go up a folder;  
-// const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 3000; 
 
 // express.static() will return a function
 app.use(express.static(publicPath));   // use this to register some middleware (this gives access to public folder for Express app)
@@ -14,6 +14,6 @@ app.get('*', (req, res) => {     // '*' to match all unmatched routes;  this fix
     res.sendFile(path.join(publicPath, 'index.html'));  // if asset requested is unavail, then send to index.html   
 });        
 
-app.listen(3000, () => {        // can see this via localhost:3000  
+app.listen(port, () => {        // can see this via localhost:3000  
     console.log('Server is Running'); 
 }); 
